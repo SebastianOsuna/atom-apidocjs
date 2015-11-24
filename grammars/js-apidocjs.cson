@@ -36,9 +36,9 @@
       },
       {
         'comment': 'API examples',
-        'match': '(?<!\\w)@(apiExample|apiSuccessExample|apiErrorExample) +{(.*?)} +(.*)',
+        'match': '(?<!\\w)@(apiExample|apiSuccessExample|apiErrorExample)( +{(.*?)})? +(.*)',
         'captures':
-          '3':
+          '4':
             'name': 'support.class.js'
       },
       {
