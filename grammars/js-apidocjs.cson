@@ -1,0 +1,58 @@
+'scopeName': 'source.apidocjs'
+'name': 'apidocjs'
+'fileTypes': ['js']
+'patterns': [
+  # {
+  #   'match': '@apiName .*'
+  #   'name': 'constant.numeric.integer.hexadecimal.python'
+  # },
+  {
+    'comment': 'docblock'
+    'begin': '/\\*\\*',
+    'end': '\\*/',
+    'patterns': [
+      {
+        'match': '(?<!\\w)@api {(.*?)} (.*?) (.*)',
+        'captures':
+          '1':
+            'name': 'keyword.control.js'
+          '2':
+            'name': 'string.quoted.single.js'
+      },
+      {
+        'match': '(?<!\\w)@(apiName|apiGroup) (.*)',
+        'captures':
+          '2':
+            'name': 'variable.other.module.js'
+      },
+      {
+        'comment': 'API params',
+        'match': '(?<!\\w)@(apiParam|apiSuccess) +{(.*?)} +([a-zA-Z.]+)',
+        'captures':
+          '2':
+            'name': 'storage.type.class.jsdoc'
+          '3':
+            'name': 'variable.parameter.function.js'
+      },
+      {
+        'comment': 'API examples',
+        'match': '(?<!\\w)@(apiExample|apiSuccessExample|apiErrorExample) +{(.*?)} +(.*)',
+        'captures':
+          '3':
+            'name': 'support.class.js'
+      },
+      {
+        'match': '(?<!\\w)@(api|apiDefine|apiDescription|apiError|apiErrorExample|apiExample|apiGroup|apiHeader|apiHeaderExample|apiIgnore|apiName|apiParam|apiParamExample|apiPermission|apiSampleRequest|apiSuccess|apiSuccessExample|apiUse|apiVersion)\\b'
+        'name': 'storage.type.class.jsdoc'
+      },
+      {
+        'match': '(?<!\\w)@(abstract|access|alias|augments|author|async|attribute|arg|argument|beta|borrows|bubbes|callback|class|classdesc|config|const|constant|constructs|constructor|copyright|chainable|default|defaultvalue|deprecated|desc|description|enum|emits|event|example|exports|external|extends|extension|extensionfor|extension_for|for|file|fileoverview|fires|final|function|global|host|ignore|implements|inheritdoc|inner|instance|interface|kind|lends|license|listens|main|member|memberof|method|mixex|mixin(?:s|)|module|name|namespace|override|overview|param|private|prop|property|protected|readonly|readOnly|requires|required|return|returns|see|since|static|summary|submodule|this|throws|todo|tutorial|type|typedef|var|variation|version|virtual|uses|writeOnce)\\b'
+        'name': 'storage.type.class.jsdoc'
+      }
+    ],
+    'name': 'comment.block.documentation.js'
+  },
+  {
+    'include': 'source.js'
+  },
+]

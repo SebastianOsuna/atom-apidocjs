@@ -1,0 +1,17 @@
+{
+  "name": "atom-apidocjs",
+  "version": "0.0.1",
+  "description": "Hacky JS syntax with JSDoc",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "atom-apidocjs:toggle"
+  },
+  "repository": "https://github.com/atom/atom-apidocjs",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
