@@ -8,7 +8,7 @@
   # },
   {
     'comment': 'docblock'
-    'begin': '/\\*\\*',
+    'begin': '.*/\\*\\*',
     'end': '\\*/',
     'patterns': [
       {
@@ -17,11 +17,17 @@
           '1':
             'name': 'keyword.control.js'
           '2':
-            'name': 'string.quoted.single.js'
+            'name': 'entity.name.type.instance.jsdoc'
+          '3':
+            'name': 'variable.other.module.js'
+          '4':
+            'name': 'variable.other.module.js'
       },
       {
-        'match': '(?<!\\w)@(apiName|apiGroup) (.*)',
+        'match': '(?<!\\w)(@apiName|@apiGroup) (.*)',
         'captures':
+          '1':
+            'name': 'storage.type.class.jsdoc'
           '2':
             'name': 'variable.other.module.js'
       },
